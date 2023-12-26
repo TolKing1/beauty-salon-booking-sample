@@ -1,7 +1,19 @@
 {
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "Final project for JS",
+  "main": "index.html",
   "scripts": {
     "postinstall": "cd ./test && npm i || true",
     "test": "cd ./test && npm run test",
-    "build": "echo \"Dummy build script for Autocode\""
+    "build": "echo \"Dummy build script for Autocode\"",
+    "compile": "sass src/styles/style.scss src/dist/style.css",
+    "watch": "sass --watch src/styles/style.scss src/dist/style.css"
+  },
+  "author": "To'lqin Oltiboyev",
+  "license": "ISC",
+  "homepage": "https://autocode.git.epam.com/tolqin_oltiboyev/final-project#readme",
+  "devDependencies": {
+    "sass": "^1.69.5"
   }
 }
