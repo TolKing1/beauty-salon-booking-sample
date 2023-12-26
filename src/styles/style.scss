@@ -1,0 +1,91 @@
+// Import external styles
+@import "nullstyle.scss";
+@import "./kit/variables";
+@import "./kit/mixins";
+
+// Header styles
+header {
+  // Navbar styles
+  .navbar {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+
+    background-color: $black;
+    opacity: 0.9;
+    &__row {
+      padding: 5px 0;
+      height: 100%;
+    }
+    &__logo {
+      width: 100%;
+      height: auto;
+      max-width: 252px;
+    }
+    &__list {
+      &-item {
+        padding-left: 60px;
+        a {
+          @include font($fontMain, 20px, 400);
+          text-transform: uppercase;
+          color: #FFFFFF;
+          &:hover {
+            // Add styles for hover state
+          }
+        }
+      }
+      &-login {
+        img {
+          width: 32px;
+        }
+      }
+    }
+  }
+
+  // Header styles
+  .header {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    font-size: 35px;
+    color: $white;
+    h1 {
+      @include font($fontMain, 1.42em, 300);
+    }
+    h2 {
+      @include font($fontHead, 2.71em, 400);
+      padding: 0.85em 0;
+    }
+    &__button {
+      display: table;
+      margin-right: auto;
+      padding: 1em 3em;
+      border: 2px white solid;
+      border-radius: 2em;
+      box-sizing: border-box;
+
+      @include font($fontMain, 1em, 400);
+      color: $white;
+
+      transition: 400ms;
+      &:hover {
+        transform: scale(0.9);
+        // Add styles for hover state
+      }
+    }
+    &__background {
+      width: 100%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}
+
+// Main content styles
+main {
+  height: 100vh;
+}
