@@ -964,7 +964,7 @@ main .choose::before {
   right: 0;
   z-index: -1;
   display: block;
-  background-image: url("../assets/images/choose.png");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fchoose.png?alt=media&token=1e21d11c-0a88-4bc7-855b-ae8866983a19");
   background-origin: border-box;
   background-position: right center;
   background-repeat: no-repeat;
@@ -1004,7 +1004,7 @@ main .choose__slider {
 main .quote {
   height: 100vh;
   min-height: 500px;
-  background-image: url("../assets/images/contacts/image 2.png");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fcontacts%2Fimage%202.png?alt=media&token=e4de43bb-62d3-4bf6-a06d-601dd6fbf630");
   background-origin: border-box;
   background-position: center center;
   background-repeat: no-repeat;

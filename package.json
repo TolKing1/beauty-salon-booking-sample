@@ -14,6 +14,12 @@
   "license": "ISC",
   "homepage": "https://autocode.git.epam.com/tolqin_oltiboyev/final-project#readme",
   "devDependencies": {
+    "firebase": "^10.7.1",
+    "install": "^0.13.0",
+    "npm": "^10.2.5",
     "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }
