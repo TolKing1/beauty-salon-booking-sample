@@ -851,9 +851,15 @@ body .btn {
 body .btn:hover {
   transform: scale(0.9);
 }
+body .logo {
+  max-height: 80%;
+}
+body .logo img {
+  height: 60px;
+}
 
 header {
-  height: 100dvh;
+  height: 100vh;
   min-height: 700px;
 }
 header .navbar {
@@ -861,18 +867,13 @@ header .navbar {
   height: 80px;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 4;
   background-color: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(5px);
 }
 header .navbar__row {
   padding: 5px 0;
   height: 100%;
-}
-header .navbar__logo {
-  max-width: 252px;
-  width: auto;
-  height: fit-content;
 }
 header .navbar__list-item {
   padding-left: 3rem;
@@ -886,6 +887,9 @@ header .navbar__list-item a {
 }
 header .navbar__list-login img {
   width: 32px;
+}
+header .navbar__toggle {
+  display: none;
 }
 header .header {
   height: 100%;
@@ -946,14 +950,29 @@ main .about__content p {
   margin-bottom: 2em;
 }
 main .choose {
-  height: 100vh;
-  min-height: 500px;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  font-size: 1.25rem;
+}
+main .choose::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
   background-image: url("../assets/images/choose.png");
   background-origin: border-box;
   background-position: right center;
   background-repeat: no-repeat;
   background-size: auto 100%;
-  font-size: 1.25rem;
+}
+main .choose__container {
+  height: 100%;
+  position: relative;
 }
 main .choose__content {
   height: 100%;
@@ -975,15 +994,12 @@ main .choose__content p {
   line-height: 1.5em;
   z-index: 5;
 }
-main .choose__container {
-  position: relative;
-}
 main .choose__slider {
   z-index: 1;
-  height: 300px;
-  position: absolute;
+  max-height: 300px;
+  position: relative;
   right: 50%;
-  bottom: 5px;
+  bottom: 0.25rem;
 }
 main .quote {
   height: 100vh;
@@ -1015,13 +1031,16 @@ main .quote__button {
 }
 main .contact {
   height: 100vh;
+  width: 100%;
   min-height: 500px;
 }
 main .contact .contact__row-1 {
   height: 60%;
+  max-width: 100%;
 }
 main .contact .contact__row-2 {
   height: 40%;
+  max-width: 100%;
 }
 main .contact__box {
   height: 100%;
@@ -1053,6 +1072,9 @@ main .contact__map {
 .footer__details {
   font-size: 1rem;
 }
+.footer__details .contacts {
+  align-self: start;
+}
 .footer__details article h1, .footer__details address h1 {
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
@@ -1070,8 +1092,94 @@ main .contact__map {
   color: #FFFFFF;
 }
 .footer__logo {
-  width: auto;
-  height: fit-content;
+  width: fit-content;
+}
+
+@media screen and (max-width: 1199px) {
+  html {
+    font-size: 18px;
+  }
+  .logo {
+    height: 50px;
+  }
+  header .navbar {
+    height: 70px;
+  }
+}
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 17px;
+  }
+  .logo {
+    height: 45px;
+  }
+  header .navbar {
+    height: 60px;
+  }
+  header .navbar__list > li {
+    display: none;
+  }
+  header .navbar__logo {
+    margin: 0 auto;
+  }
+  header .navbar__logo img {
+    height: 45px;
+  }
+  header .navbar__toggle {
+    display: block;
+  }
+  main .about__content {
+    text-align: center;
+  }
+  main .about__img {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+  .logo img {
+    height: 40px;
+  }
+  header .navbar {
+    height: 55px;
+  }
+  main .choose::before {
+    background-position: center center;
+    background-size: cover;
+    filter: blur(8px) brightness(1.1);
+  }
+  main .choose__content {
+    text-align: center;
+  }
+  main .choose__slider {
+    right: 0;
+  }
+  .footer__container {
+    flex-direction: column;
+  }
+  .footer__details {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer__details .address {
+    margin: 2em 0;
+  }
+  .footer__details .contacts {
+    align-self: center;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 13px;
+  }
+  header .navbar {
+    height: 50px;
+  }
+  header .navbar__logo img {
+    height: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,118 @@
-@media screen and (max-width:576px) {
-
+@media screen and (max-width: 1199px) {
+  html {
+    font-size: 18px;
+  }
+  .logo{
+    height: 50px;
+  }
+  header {
+    .navbar {
+      height: 70px;
+    }
+  }
 }
-@media screen and (max-width:768px) {
 
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 17px;
+  }
+  .logo{
+    height: 45px;
+  }
+  header {
+    .navbar {
+      height: 60px;
+
+      &__list > li {
+        display: none;
+      }
+
+      &__logo {
+        margin: 0 auto;
+        img {
+          height: 45px;
+        }
+      }
+
+      &__toggle {
+        display: block;
+      }
+    }
+  }
+  main {
+    .about {
+      &__content {
+        text-align: center;
+      }
+
+      &__img {
+        display: none;
+      }
+    }
+  }
 }
-@media screen and (max-width:992px) {
 
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+  .logo{
+    img {
+      height: 40px;
+    }
+  }
+  header {
+    .navbar {
+      height: 55px;
+    }
+  }
+  main {
+    .choose {
+      &::before {
+        background-position: center center;
+        background-size: cover;
+        filter: blur(8px) brightness(1.1);
+      }
+
+      &__content {
+        text-align: center;
+      }
+
+      &__slider {
+        right: 0;
+      }
+    }
+  }
+  .footer{
+    &__container{
+      flex-direction: column;
+    }
+    &__details{
+      flex-direction: column;
+      text-align: center;
+      .address{
+        margin: 2em 0;
+      }
+      .contacts{
+        align-self: center;
+      }
+    }
+  }
 }
-@media screen and (max-width:1200px) {
 
+@media (max-width: 575px) {
+  html {
+    font-size: 13px;
+  }
+  header {
+    .navbar {
+      height: 50px;
+
+      &__logo {
+        img {
+          height: 30px;
+        }
+      }
+    }
+  }
 }

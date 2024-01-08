@@ -16,7 +16,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar__row d-flex justify-content-between align-items-center">
-                <a href="index.html"><img alt="Charlotte Hair" class="navbar__logo" src="assets/images/header/logo.png"></a>
+                <a class="navbar__logo logo" href="index.html"><img alt="Charlotte Hair" src="assets/images/header/logo.png"></a>
                 <ul class="navbar__list d-flex align-items-center">
                     <li class="navbar__list-item"><a href="index.html">Home</a></li>
                     <li class="navbar__list-item"><a href="">Our team</a></li>
@@ -27,6 +27,9 @@
                             </span>
                     </li>
                 </ul>
+                <div class="navbar__toggle">
+                    <a href="#"></a>
+                </div>
             </div>
         </div>
     </nav>
@@ -44,9 +47,9 @@
 <main>
     <section class="about">
         <div class="about__container container d-flex justify-content-between align-items-center">
-            <img alt="Girl with green clothe" class="about__img align-self-end col-5"
+            <img class="about__img align-self-end col-4" alt="Girl with green clothe"
                  src="assets/images/header/about-us.png">
-            <section class="about__content col-6  ">
+            <section class="about__content col-md-12 col-lg-8">
                 <h1>About Us</h1>
                 <p>Our carefully chosen and highly trained staff is here to exceed your expectations. The same goes
                     for our elegant salon space – dedicated to guest comfort – and our devotion to innovation and
@@ -62,7 +65,7 @@
     </section>
     <section class="choose">
         <div class="choose__container container">
-            <article class="choose__content col-6">
+            <article class="choose__content col-12 col-sm-12 col-md-8 col-lg-6">
                 <h1>
                     Choose yours
                 </h1>
@@ -93,14 +96,14 @@
     </section>
     <section class="contact">
         <div class="contact__box">
-            <div class="row contact__row contact__row-1 justify-content-center align-items-center">
-                <article class="contact__box__article">
+            <div class="contact__row contact__row-1 d-flex justify-content-center align-items-center">
+                <article class="contact__box__article col-12 col-md-8">
                     <h1>Contacts</h1>
                     <p>Walk-ins are always welcome!
                         Call or stop by to make an appointment.</p>
                 </article>
             </div>
-            <div class="row contact__row contact__row-2">
+            <div class="contact__row contact__row-2">
                 <iframe class="contact__map" allowfullscreen=""
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d724.4598046249879!2d11.12769539655144!3d43.42218586924484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a3b7aad3c5321%3A0x5eb551cd324a0109!2sCharlotte%20Hair%20Salon!5e0!3m2!1sen!2s!4v1703831269749!5m2!1sen!2s"
@@ -110,14 +113,11 @@
         </div>
 
     </section>
-
-
-
 </main>
 <footer class="footer">
-    <div class="container d-flex justify-content-between align-items-center">
-        <section class="footer__details col-6 d-flex justify-content-between align-items-center">
-            <article class="contacts col-6">
+    <div class="footer__container container d-flex justify-content-between align-items-center">
+        <section class="footer__details col-12 col-md-8 d-flex justify-content-between align-items-center">
+            <article class="contacts ool-12 col-md-6 ">
                 <h1>
                     Contacts
                 </h1>
@@ -126,7 +126,7 @@
                     <a href="mailto:siretey@mail.ru">siretey@mail.ru</a>
                 </p>
             </article>
-            <article class="address col-6">
+            <article class="address  col-12 col-md-6">
                 <h1>
                     Address
                 </h1>
@@ -136,7 +136,9 @@
                 </address>
             </article>
         </section>
-        <a href="index.html"><img alt="Footer logo" class="footer__logo" src="assets/images/header/logo.png"></a>
+        <a href="index.html">
+            <img class="footer__logo logo col-8 col-md-4" src="assets/images/header/logo.png"  alt="Footer logo" >
+        </a>
     </div>
 </footer>
 <script src="js/owl-carousel/jquery.min.js"></script>
