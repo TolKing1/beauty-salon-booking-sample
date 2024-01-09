@@ -72,6 +72,7 @@
     width: 125px;
   }
 
+
   main {
     .choose {
       &::before {
@@ -108,9 +109,19 @@
 
 @media (max-width: 575px) {
   html {
-    font-size: 13px;
+    font-size: 13px !important;
   }
   .logo img{
     width: 100px;
+  }
+  .about{
+    &____content{
+      h1{
+        font-size: 4em !important;
+      }
+      p{
+        font-size: 1.5em !important;
+      }
+    }
   }
 }

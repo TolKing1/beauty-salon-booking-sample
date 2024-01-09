@@ -895,6 +895,29 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.15s 0.1s;
 }
 
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  list-style: none;
+}
+.breadcrumb-list li {
+  font-size: 0.85rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.breadcrumb-item.active {
+  color: #000000;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  display: inline-block;
+  padding: 0 0.5rem;
+  color: darkgrey;
+}
+
 .form__structor {
   font-family: "Raleway", sans-serif;
   background-color: #000000;
@@ -1261,10 +1284,8 @@ main .about {
   min-height: 500px;
   padding: 5px 5px 0;
 }
-main .about__img {
-  height: 80%;
-  width: auto;
-  max-height: 80%;
+main .about__img img {
+  max-width: 100%;
 }
 main .about__content {
   color: #000000;
@@ -1519,10 +1540,16 @@ main .contact__map {
 }
 @media (max-width: 575px) {
   html {
-    font-size: 13px;
+    font-size: 13px !important;
   }
   .logo img {
     width: 100px;
+  }
+  .about____content h1 {
+    font-size: 4em !important;
+  }
+  .about____content p {
+    font-size: 1.5em !important;
   }
 }
 
