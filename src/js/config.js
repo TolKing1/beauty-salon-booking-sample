@@ -144,3 +144,11 @@ export function form(){
 
     });
 }
+export function toggleBurger(){
+    const burger = document.querySelector('.navbar__toggle')
+    const menu = document.querySelector('.navbar__list')
+    burger.addEventListener('click',(e)=>{
+        e.preventDefault()
+        menu.classList.toggle("active")
+    })
+}

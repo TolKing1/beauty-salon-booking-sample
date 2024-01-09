@@ -2,13 +2,8 @@
   html {
     font-size: 18px;
   }
-  .logo{
-    height: 50px;
-  }
-  header {
-    .navbar {
-      height: 70px;
-    }
+  .logo img{
+    width: 175px;
   }
 }
 
@@ -16,32 +11,45 @@
   html {
     font-size: 17px;
   }
-  .logo{
-    height: 45px;
+  .logo img{
+    width: 150px;
   }
-  header {
-    .navbar {
-      &__row{
-        display: block;
-        position: relative;
-      }
-      &__list {
-        margin-top: 15px;
-        & > li {
-        }
-      }
-
-      &__logo {
-        margin: 0 auto;
-        img {
-          height: 45px;
-        }
-      }
-
-      &__toggle {
-        display: block;
+  .navbar {
+    &__container{
+      flex-direction: column;
+      position: relative;
+    }
+    .navbar__list {
+      display: none !important;
+      margin-top: 15px;
+      text-align: center;
+      > li{
+        padding: 0 5px;
       }
     }
+    &__list.active, .navbar__toggle{
+      display: block !important;
+    }
+    .navbar__toggle{
+      position: absolute;
+      top: 5px;
+      bottom: 0;
+      right: 20px;
+    }
+
+    .navbar__list-login{
+      position: absolute;
+      top: 0;
+      left: 5px;
+    }
+    &__logo {
+      margin: 0 auto;
+    }
+
+    &__toggle {
+      display: block;
+    }
+
   }
   main {
     .about {
@@ -60,16 +68,10 @@
   html {
     font-size: 15px;
   }
-  .logo{
-    img {
-      height: 40px;
-    }
+  .logo img{
+    width: 125px;
   }
-  header {
-    .navbar {
-      height: 55px;
-    }
-  }
+
   main {
     .choose {
       &::before {
@@ -108,15 +110,7 @@
   html {
     font-size: 13px;
   }
-  header {
-    .navbar {
-      height: 50px;
-
-      &__logo {
-        img {
-          height: 30px;
-        }
-      }
-    }
+  .logo img{
+    width: 100px;
   }
 }
