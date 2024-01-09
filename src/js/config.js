@@ -1,5 +1,5 @@
-import { getStorage,ref,listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getStorage,ref,listAll, getDownloadURL } from "../dist/firebase/firebase-storage.js";
+import { initializeApp } from "../dist/firebase/firebase-app.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBmVFcgSM9FtDXYId4XcQoJKep3K7uDxCg",
@@ -16,26 +16,29 @@ export const storage = getStorage(app)
 export const storageRef = ref(storage, '/images/slider');
 
 export function loadImages() {
-    listAll(storageRef)
-        .then(function (result) {
-            result.items.forEach(function (item) {
-                getDownloadURL(item)
-                    .then(function (url) {
-                        // Create img element
-                        let imgElement = document.createElement('img');
-                        imgElement.alt = 'girl';
-                        imgElement.src = url;
-                        imgElement.loading = 'lazy'
+    return new Promise((resolve, reject) => {
+        listAll(storageRef)
+            .then(function (result) {
+                const promises = result.items.map(function (item) {
+                    return getDownloadURL(item)
+                        .then(function (url) {
+                            let imgElement = document.createElement('img');
+                            imgElement.alt = 'girl';
+                            imgElement.src = url;
 
-                        // Append the img element to the slider
-                        document.querySelector('.owl-carousel').appendChild(imgElement);
+                            document.getElementById('carousel').append(imgElement);
+                        })
+                        .catch(function (error) {
+                            console.error('Error getting download URL:', error);
+                        });
+                });
+
+                Promise.all(promises)
+                    .then(() => {
+                        resolve(); // Resolve the promise when all images are loaded
                     })
-                    .catch(function (error) {
-                        console.error('Error getting download URL:', error);
-                    });
-            });
-        })
-        .catch(function (error) {
-            console.error('Error getting images from Firebase Storage:', error);
-        });
+                    .catch(reject);
+            })
+            .catch(reject);
+    });
 }
