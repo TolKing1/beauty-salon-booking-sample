@@ -1,4 +1,4 @@
-import {loadImages} from "./config.js";
+import {loadImages} from "../config.js";
 export function initializeOwlCarousel() {
     $('.owl-carousel').owlCarousel({
         items: 5,

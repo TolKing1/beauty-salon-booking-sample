@@ -5,8 +5,10 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="styles/owl-carousel/owl.carousel.min.css" rel="stylesheet">
     <link href="dist/style.css" rel="stylesheet">
-    <link href="dist/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+    <script type="module" src="index.js"></script>
+
     <title>Charlotte Hair</title>
 </head>
 <body>
@@ -14,17 +16,22 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar__row d-flex justify-content-between align-items-center">
-                <a class="navbar__logo logo" href="index.html">
-                    <img loading="lazy" alt="Charlotte Hair" src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Flogo.png?alt=media&token=ad69dc85-72b3-4f0c-afbd-f40d70a1a953">
-                </a>
+                <div class="logo">
+                    <a class="navbar__logo logo" href="index.html">
+                        <img alt="Charlotte Hair" loading="lazy"
+                             src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Flogo.png?alt=media&token=ad69dc85-72b3-4f0c-afbd-f40d70a1a953">
+                    </a>
+                </div>
                 <ul class="navbar__list d-flex align-items-center">
                     <li class="navbar__list-item"><a href="index.html">Home</a></li>
                     <li class="navbar__list-item"><a href="">Our team</a></li>
                     <li class="navbar__list-item"><a href="">Prices</a></li>
                     <li class="navbar__list-item">
-                            <span class="navbar__list-login">
-                                <img loading="lazy" alt="account" src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Flogo_account.svg?alt=media&token=e731fd43-4c1c-4699-a881-8defba47500c">
-                            </span>
+                        <a class="navbar__list-login" id="navbar__list-login" href="#">
+                                <img alt="account" loading="lazy"
+                                     src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Flogo_account.svg?alt=media&token=e731fd43-4c1c-4699-a881-8defba47500c">
+                        </a>
+
                     </li>
                 </ul>
                 <div class="navbar__toggle">
@@ -35,7 +42,8 @@
     </nav>
     <section class="header">
         <video autoplay class="header__background" loop muted playsinline>
-            <source src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/videos%2Fheader_video.mp4?alt=media&token=a512b861-9723-44b0-819b-012b93af0ba7" type="video/mp4">
+            <source src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/videos%2Fheader_video.mp4?alt=media&token=a512b861-9723-44b0-819b-012b93af0ba7"
+                    type="video/mp4">
         </video>
         <div class="container d-flex flex-column justify-content-center">
             <h1>Our Expertise</h1>
@@ -43,11 +51,45 @@
             <a class="header__button btn" href="tel:+998972755121">Call Now</a>
         </div>
     </section>
+    <div class="form__structor close-form" id="form__structor">
+        <div class="form-container">
+            <form class="signup" id="sign-form">
+                <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+                <div class="form-holder">
+                    <label>
+                        <input type="email" class="input" id="sign-mail"  placeholder="Email" name="email" />
+                    </label>
+                    <label>
+                        <input type="password" class="input" id="sign-password" placeholder="Password" name="password" />
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn">Sign up</button>
+            </form>
+        </div>
+        <form class="login slide-up" id="log-form">
+            <div class="center">
+                <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+                <div class="form-holder">
+                    <label>
+                        <input type="email" class="input" id="log-mail" placeholder="Email" name="email" />
+                    </label>
+                    <label>
+                        <input type="password" class="input" id="log-password" placeholder="Password" name="password" />
+                    </label>
+                </div>
+                <button class="submit-btn">Log in</button>
+            </div>
+        </form>
+        <a id="close__btn" href="#"></a>
+        <a id="exit__acc" href="#">
+            <svg  viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#fff" fill="none"><polyline points="46.02 21.95 55.93 31.86 46.02 41.77"/><line x1="55.93" y1="31.86" x2="19.59" y2="31.86"/><path d="M40,38.18V52a2.8,2.8,0,0,1-2.81,2.8H12A2.8,2.8,0,0,1,9.16,52V11.77A2.8,2.8,0,0,1,12,9H37.19A2.8,2.8,0,0,1,40,11.77V25"/></svg>
+        </a>
+    </div>
 </header>
 <main>
     <section class="about">
         <div class="about__container container d-flex justify-content-between align-items-center">
-            <img loading="lazy" class="about__img align-self-end col-4" alt="Girl with green clothe"
+            <img alt="Girl with green clothe" class="about__img align-self-end col-4" loading="lazy"
                  src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Fabout-us.png?alt=media&token=72eb2185-efbf-42b4-9bc4-ea8dc17e9de1">
             <section class="about__content col-md-12 col-lg-8">
                 <h1>About Us</h1>
@@ -99,10 +141,10 @@
                 </article>
             </div>
             <div class="contact__row contact__row-2">
-                <iframe class="contact__map" allowfullscreen="" title="contact_map"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d724.4598046249879!2d11.12769539655144!3d43.42218586924484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a3b7aad3c5321%3A0x5eb551cd324a0109!2sCharlotte%20Hair%20Salon!5e0!3m2!1sen!2s!4v1703831269749!5m2!1sen!2s"
+                <iframe allowfullscreen="" class="contact__map" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d724.4598046249879!2d11.12769539655144!3d43.42218586924484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a3b7aad3c5321%3A0x5eb551cd324a0109!2sCharlotte%20Hair%20Salon!5e0!3m2!1sen!2s!4v1703831269749!5m2!1sen!2s"
                         style="border:0;"
+                        title="contact_map"
                 ></iframe>
             </div>
         </div>
@@ -132,14 +174,14 @@
             </article>
         </section>
         <a href="index.html">
-            <img loading="lazy" class="footer__logo logo col-8 col-md-4" src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Flogo.png?alt=media&token=ad69dc85-72b3-4f0c-afbd-f40d70a1a953"  alt="Footer logo" >
+            <img alt="Footer logo" class="footer__logo logo col-8 col-md-4"
+                 loading="lazy"
+                 src="https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fheader%2Flogo.png?alt=media&token=ad69dc85-72b3-4f0c-afbd-f40d70a1a953">
         </a>
     </div>
 </footer>
+
 <script src="js/owl-carousel/jquery.min.js"></script>
 <script src="js/owl-carousel/owl.carousel.min.js"></script>
-<script src="js/module.js" type="module" ></script>
-
-
 </body>
 </html>

@@ -21,10 +21,14 @@
   }
   header {
     .navbar {
-      height: 60px;
-
-      &__list > li {
-        display: none;
+      &__row{
+        display: block;
+        position: relative;
+      }
+      &__list {
+        margin-top: 15px;
+        & > li {
+        }
       }
 
       &__logo {

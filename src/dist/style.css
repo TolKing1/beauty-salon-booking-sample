@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6 {
   align-self: stretch !important;
 }
 
-body .btn {
+.btn {
   display: table;
   margin-right: auto;
   padding: 1em 3em;
@@ -848,14 +848,311 @@ body .btn {
   color: #FFFFFF;
   transition: 400ms;
 }
-body .btn:hover {
+.btn:hover {
   transform: scale(0.9);
 }
-body .logo {
+
+.logo {
   max-height: 80%;
 }
-body .logo img {
+.logo img {
   height: 60px;
+}
+
+.form__structor {
+  font-family: "Raleway", sans-serif;
+  background-color: #000000;
+  font-size: 1rem;
+  border-radius: 15px;
+  min-height: 500px;
+  min-width: 350px;
+  position: fixed;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in;
+  text-align: center;
+  overflow: hidden;
+}
+.form__structor #close__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 7;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+.form__structor #close__btn:hover::before, .form__structor #close__btn:hover::after {
+  background: #1B4D4A;
+}
+.form__structor #close__btn::before, .form__structor #close__btn::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #FFFFFF;
+  -webkit-transition: all 0.3s ease-in;
+}
+.form__structor #close__btn::before {
+  transform: rotate(45deg);
+}
+.form__structor #close__btn::after {
+  transform: rotate(-45deg);
+}
+.form__structor #exit__acc {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  left: 10px;
+  z-index: 7;
+  display: inline-block;
+}
+.form__structor::after {
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 500px;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Flogin.jpg?alt=media&token=5a733c4a-8cf0-4e41-94b0-b69eb0d3a56f");
+}
+.form__structor .signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .signup.slide-up {
+  top: 5%;
+  transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .signup.slide-up .form-holder, .form__structor .signup.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+.form__structor .signup.slide-up .form-title {
+  font-size: 1em;
+  cursor: pointer;
+}
+.form__structor .signup.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .signup .form-title {
+  color: #FFFFFF;
+  font-size: 1.7em;
+  text-align: center;
+}
+.form__structor .signup .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .signup .form-holder {
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.form__structor .signup .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #FBF0EC;
+  width: 100%;
+  font-size: 1rem;
+}
+.form__structor .signup .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form__structor .signup .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.8rem;
+}
+.form__structor .signup .form-holder .input-error {
+  border: none;
+  background-color: rgba(178, 0, 0, 0.31);
+}
+.form__structor .signup .form-holder .input-error::placeholder {
+  color: rgba(138, 1, 1, 0.89);
+}
+.form__structor .signup .submit-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .signup .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.form__structor .login {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translate(-50%, 0);
+  background-color: #FFFFFF;
+  width: 200%;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 4;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login .center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login .center .form-title {
+  color: #000000;
+  font-size: 1.7em;
+  text-align: center;
+}
+.form__structor .login .center .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login .center .form-holder {
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #FBF0EC;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login .center .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #FBF0EC;
+  width: 100%;
+  font-size: 1rem;
+}
+.form__structor .login .center .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.form__structor .login .center .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.8rem;
+}
+.form__structor .login .center .form-holder .input-error {
+  border: none;
+  background-color: rgba(178, 0, 0, 0.31);
+}
+.form__structor .login .center .form-holder .input-error::placeholder {
+  color: rgba(138, 1, 1, 0.89);
+}
+.form__structor .login .center .submit-btn {
+  background-color: #6B92A4;
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login .center .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.form__structor .login.slide-up {
+  top: 90%;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login.slide-up .center {
+  top: 10%;
+  transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login.slide-up .form-holder, .form__structor .login.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login.slide-up .form-title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.form__structor .login #close__btn {
+  background-color: #1B4D4A;
+}
+
+.close-form {
+  transform: translate(-50%, -200%);
 }
 
 header {
@@ -1113,11 +1410,12 @@ main .contact__map {
   .logo {
     height: 45px;
   }
-  header .navbar {
-    height: 60px;
+  header .navbar__row {
+    display: block;
+    position: relative;
   }
-  header .navbar__list > li {
-    display: none;
+  header .navbar__list {
+    margin-top: 15px;
   }
   header .navbar__logo {
     margin: 0 auto;
