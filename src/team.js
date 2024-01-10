@@ -88,12 +88,15 @@ async function getEvents(memberId, user) {
                 const end = DayPilot.Date(timeEnd,true);
 
                 let text;
+                let color;
                 if (data.user === user) {
                     text ="Your booking:\n\n"+ data.text;
+                    color = '#c6ffb9'
                 } else {
                     text = "BOOKED"
+                    color = '#ffb2b2'
                 }
-                events.push({id: doc.id, start: start, end: end, text: text})
+                events.push({id: doc.id, start: start, end: end, text: text,backColor:color})
             }
 
         });
@@ -159,7 +162,8 @@ function generateCalendar(){
                 start: args.start,
                 end: args.end,
                 id: DayPilot.guid(),
-                text: modal.result
+                text: modal.result,
+                backColor:args.color
             });
 
             //write to firebase
@@ -176,7 +180,7 @@ function generateCalendar(){
 
     dp.init()
 }
-//update datas
+//update calendar
 function updateScheduler(list,title) {
     const header = document.getElementById('calendar-title')
     const calendar = document.getElementById('calendar')
