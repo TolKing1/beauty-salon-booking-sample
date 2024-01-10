@@ -104,7 +104,7 @@ function exitAcc() {
         if (isAuthenticated) {
             signOut(auth).then(function () {
                 alert("You logged out")
-                formDiv.classList.toggle("close-form");
+                location.reload();
             }).catch(function (error) {
                 console.log(error.message)
             });
@@ -128,6 +128,7 @@ function signUp(){
                 .then(async (userCredential) => {
                     alert("Account created\n" + userCredential.user.email);
                     await youAreLogged()
+                    location.reload();
                 })
                 .catch((error) => {
                     alert(error.message)
@@ -148,6 +149,7 @@ function signIn(){
                 .then(async (userCredential) => {
                     alert("Welcome: " + userCredential.user.email);
                     await youAreLogged()
+                    location.reload();
                 })
                 .catch((error) => {
                     alert(error.message)
