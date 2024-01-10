@@ -138,7 +138,7 @@ function generateCalendar(){
         viewType: "WorkWeek",
         headerDateFormat: "ddd M/d/yyyy",
         cellHeight: 50,
-        cellDuration: 60,
+        cellDuration: 30,
         dayBeginsHour: 8,
         dayEndsHour: 19,
         eventArrangement: "Full",
