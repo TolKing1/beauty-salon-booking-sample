@@ -125,7 +125,7 @@ function signUp(){
         const pass = formSign.password.value;
         if (isValidEmail(email) && isValidPassword(pass)){
             createUserWithEmailAndPassword(auth, email, pass)
-                .then(async (userCredential) => {
+                .then(async () => {
                     location.reload();
                 })
                 .catch((error) => {
@@ -144,7 +144,7 @@ function signIn(){
 
         if (isValidEmail(email) && isValidPassword(pass)){
             signInWithEmailAndPassword(auth, email, pass)
-                .then(async (userCredential) => {
+                .then(async () => {
                     location.reload();
                 })
                 .catch((error) => {
