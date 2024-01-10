@@ -1434,11 +1434,19 @@ header .header__background {
 }
 .team__title {
   font-family: "Bodidota", sans-serif;
-  font-size: 4em;
+  font-size: 4rem;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
+}
+.team__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.4em;
 }
 .team__col {
   padding-top: 10px;
@@ -1532,6 +1540,19 @@ header .header__background {
   font-family: "Helvetica", sans-serif;
   font-size: 0.8rem;
   font-weight: 400;
+}
+
+.price {
+  min-height: 800px;
+  padding: 10px 0;
+}
+.price__title {
+  font-family: "Bodidota", sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .footer {

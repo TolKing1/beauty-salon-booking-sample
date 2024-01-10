@@ -655,10 +655,16 @@ header {
 
   }
   &__title{
-    @include font($fontHead,4em,400);
+    @include font($fontHead,4rem,400);
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
+  }
+  &__subtitle{
+    @include font($fontMain,1rem,400);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.4em;
   }
   &__row{
 
@@ -761,6 +767,17 @@ header {
   @include font($fontPrice,0.8rem,400);
 }
 
+
+.price{
+  min-height: 800px;
+  padding: 10px 0;
+  &__title{
+    @include font($fontHead,4rem,400);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
 //footer
 .footer{
   background-color: $black;
