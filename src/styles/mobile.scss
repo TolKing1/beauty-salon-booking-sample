@@ -1,56 +1,61 @@
-@media screen and (max-width: 1199px) {
+@media screen and (width <= 1199px) {
   html {
     font-size: 18px;
   }
+
   .logo img{
     width: 175px;
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (width <= 991px) {
   html {
     font-size: 17px;
   }
+
   .logo img{
     width: 150px;
   }
+
   .navbar {
     &__container{
       flex-direction: column;
       position: relative;
     }
-    .navbar__list {
+
+    &__list {
       display: none !important;
       margin-top: 15px;
       text-align: center;
+
       > li{
         padding: 0 5px;
       }
     }
-    &__list.active, .navbar__toggle{
+
+    &__list.active, &__toggle{
       display: block !important;
     }
-    .navbar__toggle{
+
+    &__toggle{
       position: absolute;
+      display: block;
       top: 5px;
       bottom: 0;
       right: 20px;
     }
 
-    .navbar__list-login{
+    &__list-login{
       position: absolute;
       top: 0;
       left: 5px;
     }
+
     &__logo {
       margin: 0 auto;
     }
-
-    &__toggle {
-      display: block;
-    }
-
   }
+
   main {
     .about {
       &__content {
@@ -64,16 +69,21 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (width <= 767px) {
   html {
     font-size: 15px;
   }
+
   .logo img{
     width: 125px;
   }
-  .header__background{
-    object-position: center;
+
+  .header{
+    &__background{
+      object-position: center;
+    }
   }
+
   main {
     .choose {
       &::before {
@@ -91,16 +101,20 @@
       }
     }
   }
+
   .footer{
     &__container{
       flex-direction: column;
     }
+
     &__details{
       flex-direction: column;
       text-align: center;
+
       .address{
         margin: 2em 0;
       }
+
       .contacts{
         align-self: center;
       }
@@ -108,18 +122,21 @@
   }
 }
 
-@media (max-width: 575px) {
+@media (width <= 575px) {
   html {
     font-size: 13px !important;
   }
+
   .logo img{
     width: 100px;
   }
+
   .about{
     &____content{
       h1{
         font-size: 4em !important;
       }
+
       p{
         font-size: 1.5em !important;
       }
