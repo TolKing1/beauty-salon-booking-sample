@@ -1,7 +1,9 @@
 import { getStorage,ref,listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js";
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
-import {getAuth,onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut}  from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import {getFirestore} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
+import {getAuth,onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut}  from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
+
 
 import {isValidEmail, isValidPassword} from "./validate.js";
 
