@@ -718,7 +718,43 @@ header {
     }
 
   }
+  .calendar__container{
+    padding: 50px 0;
+    min-height: 500px !important;
+    overflow: hidden;
 
+    #calendar{
+      position: relative;
+
+      transform: translate(0,200%);
+      -webkit-transition: all .7s ease-in !important;
+
+    }
+    #calendar-title{
+      text-align: center;
+      padding-bottom: 1rem;
+
+      @include font($fontMain,2em,400);
+      text-transform: capitalize;
+    }
+  }
+}
+.modal_default_content{
+  @include font($fontHead,2em,400);
+}
+.modal_default_input{
+
+  input{
+    height: 50px !important;
+    @include font($fontMain,1em,400);
+
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(169, 169, 169, 0.42);
+  }
+}
+.modal_default_buttons{
+  @include font($fontPrice,1rem,400);
 }
 
 //footer

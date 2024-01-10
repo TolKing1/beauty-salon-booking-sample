@@ -1486,6 +1486,46 @@ header .header__background {
 .team__col:hover .layer {
   transform: translate(0, 0);
 }
+.team .calendar__container {
+  padding: 50px 0;
+  min-height: 500px !important;
+  overflow: hidden;
+}
+.team .calendar__container #calendar {
+  position: relative;
+  transform: translate(0, 200%);
+  -webkit-transition: all 0.7s ease-in !important;
+}
+.team .calendar__container #calendar-title {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.modal_default_content {
+  font-family: "Bodidota", sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.modal_default_input input {
+  height: 50px !important;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(169, 169, 169, 0.42);
+}
+
+.modal_default_buttons {
+  font-family: "Helvetica", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
 
 .footer {
   background-color: #000000;

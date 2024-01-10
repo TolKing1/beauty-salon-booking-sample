@@ -5,6 +5,7 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <script src="dist/daypilot-all.min.js"></script>
     <link href="styles/owl-carousel/owl.carousel.min.css" rel="stylesheet">
     <link href="dist/style.css" rel="stylesheet">
 
@@ -98,7 +99,10 @@
             <h1 class="team__title">Our team</h1>
             <div class="row team__row" id="team-row">
             </div>
-            <div id="dp"></div>
+            <div class="calendar__container">
+                <h1 id="calendar-title"></h1>
+                <div id="calendar"></div>
+            </div>
         </div>
     </section>
 </main>
@@ -133,7 +137,6 @@
 </footer>
 
 <script src="dist/owl-carousel/jquery.min.js"></script>
-<script src="dist/daypilot-all.min.js"></script>
 <script src="dist/owl-carousel/owl.carousel.min.js"></script>
 <script type="module" src="team.js"></script>
 </body>
