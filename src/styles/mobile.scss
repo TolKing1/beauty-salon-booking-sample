@@ -100,6 +100,14 @@
         right: 0;
       }
     }
+    .price{
+      &__up{
+        font-size: 1.5em;
+      }
+      &__bot{
+        font-size: 1.1em;
+      }
+    }
   }
 
   .footer{
@@ -130,7 +138,14 @@
   .logo img{
     width: 100px;
   }
-
+  .price{
+    &__up{
+      font-size: 2em;
+    }
+    &__bot{
+      font-size: 1.5em;
+    }
+  }
   .about{
     &____content{
       h1{

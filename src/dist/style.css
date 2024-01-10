@@ -1548,6 +1548,72 @@ header .header__background {
   text-align: center;
   margin-bottom: 0.5rem;
 }
+.price__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+.price__col {
+  min-height: 400px;
+  padding-top: 10px;
+  aspect-ratio: 1/1;
+}
+.price__col.hide {
+  display: none;
+}
+.price__search {
+  padding: 5px;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  max-width: 300px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: darkgrey;
+  display: block;
+  margin: 0 auto;
+}
+.price__inner {
+  width: 100%;
+  height: 100%;
+  background-color: #FBF0EC;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 15px 10px 0 rgba(0, 0, 0, 0.65);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.price__inner:hover {
+  -webkit-box-shadow: 2px 20px 15px 0 rgba(0, 0, 0, 0.45);
+  transform: translateY(-2%);
+}
+.price__up {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 10px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price__bot {
+  border-top: 2px solid grey;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
 
 .footer {
   background-color: #000;
@@ -1653,6 +1719,12 @@ header .header__background {
   main .choose__slider {
     right: 0;
   }
+  main .price__up {
+    font-size: 1.5em;
+  }
+  main .price__bot {
+    font-size: 1.1em;
+  }
   .footer__container {
     flex-direction: column;
   }
@@ -1673,6 +1745,12 @@ header .header__background {
   }
   .logo img {
     width: 100px;
+  }
+  .price__up {
+    font-size: 2em;
+  }
+  .price__bot {
+    font-size: 1.5em;
   }
   .about____content h1 {
     font-size: 4em !important;
