@@ -77,5 +77,3 @@ function search(){
     })
 
 }
-// Example usage:
-generateAndAppendPriceCard("49.89", "Styling");
