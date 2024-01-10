@@ -4,9 +4,6 @@
   "description": "Final project for JS",
   "main": "src/index.html",
   "scripts": {
-    "postinstall": "cd ./test && npm i || true",
-    "test": "cd ./tests && npm run tes  t",
-    "build": "echo \"Dummy build script for Autocode\"",
     "compile": "sass src/styles/style.scss src/dist/style.css",
     "watch": "sass --watch src/styles/style.scss src/dist/style.css",
     "build:sass": "sass src/styles/style.scss src/dist/style.css && npx postcss src/dist/style.css --output src/dist/style.min.css",
