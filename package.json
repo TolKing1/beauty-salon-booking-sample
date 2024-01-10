@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "sass src/styles/style.scss src/dist/style.css",
     "watch": "sass --watch src/styles/style.scss src/dist/style.css",
+    "build": "sass src/styles/style.scss src/dist/style.css && npx postcss src/dist/style.css --output src/dist/style.min.css",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint src/**/*.js",
     "lint:scss": "stylelint src/**/*.scss"
@@ -14,9 +15,12 @@
   "license": "ISC",
   "homepage": "https://autocode.git.epam.com/tolqin_oltiboyev/final-project#readme",
   "devDependencies": {
+    "cssnano": "^6.0.3",
     "eslint": "^8.56.0",
     "install": "^0.13.0",
     "npm": "^10.2.5",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
     "sass": "^1.69.5",
     "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.0"
