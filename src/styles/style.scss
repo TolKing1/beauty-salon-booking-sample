@@ -691,7 +691,7 @@ header {
         display: table;
 
         transform: translate(0,101%);
-        -webkit-transition: all .3s ease-in-out;
+        -webkit-transition: all .1s ease-in-out;
 
         width: 100%;
         height: 100%;
@@ -727,7 +727,7 @@ header {
       position: relative;
 
       transform: translate(0,200%);
-      -webkit-transition: all .7s ease-in !important;
+      -webkit-transition: all .2s ease-in !important;
 
     }
     #calendar-title{
@@ -755,6 +755,10 @@ header {
 }
 .modal_default_buttons{
   @include font($fontPrice,1rem,400);
+}
+.calendar_default_event_inner{
+  padding: 15px;
+  @include font($fontPrice,0.8rem,400);
 }
 
 //footer

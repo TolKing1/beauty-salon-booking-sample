@@ -68,6 +68,7 @@ export function checkAuth() {
         });
     });
 }
+
 //Changes title to you are logged
 export async function youAreLogged() {
     const isAuthenticated = await checkAuth();
@@ -200,6 +201,6 @@ export function form() {
     signIn()
     closeBtn()
     exitAcc()
-    youAreLogged().then(() => console.log(""))
+    youAreLogged().then()
     Menu.init();
 }

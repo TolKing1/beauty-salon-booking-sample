@@ -1,4 +1,4 @@
-import {checkAuth, form, loadImages, toggleBurger} from "./js/config.js";
+import { form, loadImages, toggleBurger} from "./js/config.js";
 import {initializeOwlCarousel} from "./js/owl.js";
 import {formInteractive} from "./js/validate.js";
 

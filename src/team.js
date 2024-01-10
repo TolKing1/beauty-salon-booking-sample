@@ -1,13 +1,13 @@
-import {collection,getDocs} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-import {checkAuth, db, form, toggleBurger} from "./js/config.js";
+import {collection,getDocs,addDoc} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+import {auth, checkAuth, db, form, toggleBurger} from "./js/config.js";
 import {formInteractive} from "./js/validate.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     formInteractive()
     form()
     toggleBurger()
-
-    getTeamMembers().then(()=>console.log("Team divs created"))
+    getTeamMembers().then()
+    generateCalendar()
 });
 //Create elements for display team members
 function createTeam(id, name, imgSrc) {
@@ -26,7 +26,7 @@ function createTeam(id, name, imgSrc) {
     const span = document.createElement('span');
     span.textContent = name;
     span.onclick = function() {
-        calendar({id:id,name:name});
+        calendar({id:id,name:name}).then();
     };
 
     // Append
@@ -38,6 +38,13 @@ function createTeam(id, name, imgSrc) {
 
     const teamContainer = document.getElementById('team-row');
     teamContainer.appendChild(teamCol);
+}
+
+function getAccUID(){
+    if (auth.currentUser){
+        return auth.currentUser.uid
+    }
+    return 0;
 }
 //Get data from db and generate html elements
 const getTeamMembers = async () => {
@@ -55,19 +62,72 @@ const getTeamMembers = async () => {
         throw error;
     }
 };
-function calendar(data){
-    const list = [
-        {
-            id: data.id,
-            start: DayPilot.Date.today().addHours(13),
-            end: DayPilot.Date.today().addHours(14),
-            text: data.id
+
+//member clicked
+async function calendar(data) {
+
+    const list = await getEvents(data.id, getAccUID());
+    updateScheduler(list, data.name)
+}
+//Get events
+async function getEvents(memberId, user) {
+    const eventDb = collection(db, 'events');
+
+    member = memberId;
+    let events = [];
+    try {
+        const querySnapshot = await getDocs(eventDb);
+
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            if (memberId === data.member) {
+                const timeStart = new Date(data.start);
+                const timeEnd = new Date(data.end);
+
+                const start = DayPilot.Date(timeStart,true);
+                const end = DayPilot.Date(timeEnd,true);
+
+                let text;
+                if (data.user === user) {
+                    text ="Your booking:\n\n"+ data.text;
+                } else {
+                    text = "BOOKED"
+                }
+                events.push({id: doc.id, start: start, end: end, text: text})
+            }
+
+        });
+        return events;
+    } catch (error) {
+        console.error('Error getting team events: ', error);
+
+    }
+    return events;
+}
+//Set events
+async function setEvents(args,text) {
+    const events = collection(db, 'events');
+
+    try {
+        const document = {
+            member: member,
+            user: getAccUID(),
+            start: args.start.toString(), // Assuming eventData has a 'start' property
+            end: args.end.toString(),    // Assuming eventData has an 'end' property
+            text: text   // Assuming eventData has a 'text' property
         }
-    ];
-    updateScheduler(list,data.name)
+        console.log(document)
+        const docRef = await addDoc(events,document);
+        console.log('Event added with ID: ', docRef.id);
+    } catch (error) {
+        console.error('Error adding event: ', error);
+        throw error; // Rethrow the error to handle it at a higher level if needed
+    }
 }
 
+
 let dp = null;
+let member;
 
 //generate calendar
 function generateCalendar(){
@@ -76,7 +136,7 @@ function generateCalendar(){
         headerDateFormat: "ddd M/d/yyyy",
         cellHeight: 50,
         cellDuration: 60,
-        dayBeginsHour: 9,
+        dayBeginsHour: 8,
         dayEndsHour: 19,
         eventArrangement: "Full",
         allowEventOverlap: false,
@@ -86,11 +146,11 @@ function generateCalendar(){
             const dp = args.control;
             dp.clearSelection();
 
+            //Check if client logged
             const isAuthenticated = await checkAuth();
             if (modal.canceled ) {
                 return;
             }
-            //Check if client logged
             else if(!isAuthenticated){
                 alert("Please login first!")
                 return;
@@ -101,6 +161,9 @@ function generateCalendar(){
                 id: DayPilot.guid(),
                 text: modal.result
             });
+
+            //write to firebase
+            await setEvents(args,modal.result);
         },
         eventMoveHandling: "Disabled",
         eventResizeHandling: "Update",
@@ -110,20 +173,10 @@ function generateCalendar(){
         eventClickHandling: "Enabled",
         eventHoverHandling: "Disabled",
     });
-    dp.events.list = [
-        {
-            id: 2,
-            start: DayPilot.Date.today().addHours(10),
-            end: DayPilot.Date.today().addHours(12),
-            text: 'sdasd'
-        }
-    ]
 
     dp.init()
-    dp.hide()
 }
-generateCalendar()
-
+//update datas
 function updateScheduler(list,title) {
     const header = document.getElementById('calendar-title')
     const calendar = document.getElementById('calendar')
@@ -133,5 +186,5 @@ function updateScheduler(list,title) {
     dp.show()
     dp.events.list = list
     dp.update()
-    console.log('update')
 }
+
