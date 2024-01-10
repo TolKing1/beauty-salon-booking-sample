@@ -126,8 +126,6 @@ function signUp(){
         if (isValidEmail(email) && isValidPassword(pass)){
             createUserWithEmailAndPassword(auth, email, pass)
                 .then(async (userCredential) => {
-                    alert("Account created\n" + userCredential.user.email);
-                    await youAreLogged()
                     location.reload();
                 })
                 .catch((error) => {
@@ -147,8 +145,6 @@ function signIn(){
         if (isValidEmail(email) && isValidPassword(pass)){
             signInWithEmailAndPassword(auth, email, pass)
                 .then(async (userCredential) => {
-                    alert("Welcome: " + userCredential.user.email);
-                    await youAreLogged()
                     location.reload();
                 })
                 .catch((error) => {

@@ -4,7 +4,7 @@ export function isValidEmail(str) {
     if (!str || typeof str === 'undefined') {
         return false;
     } else {
-        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(str);
+        return /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/.test(str);
     }
 }
 
@@ -49,11 +49,9 @@ export function formInteractive() {
         });
     });
     //Validate
-    const form = document.getElementById('sign-form');
     const mail = document.getElementById('sign-mail')
     const password = document.getElementById('sign-password')
 
-    const formLog = document.getElementById('log-form');
     const mailLog = document.getElementById('log-mail')
     const passwordLog = document.getElementById('log-password')
 
