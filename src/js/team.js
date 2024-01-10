@@ -1,6 +1,6 @@
 import {collection,getDocs,addDoc} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-import {auth, checkAuth, db, form, toggleBurger} from "./js/config.js";
-import {formInteractive} from "./js/validate.js";
+import {auth, checkAuth, db, form, toggleBurger} from "./util/config.js";
+import {formInteractive} from "./util/validate.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     formInteractive()
