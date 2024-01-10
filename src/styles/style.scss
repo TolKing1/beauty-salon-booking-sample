@@ -76,8 +76,13 @@
 }
 
 .breadcrumb-item {
+  a{
+    color: grey !important;
+  }
   &.active {
-    color: $black;
+    a{
+      color: $black !important;
+    }
   }
   + .breadcrumb-item {
     &::before {
@@ -426,6 +431,7 @@
 }
 .close-form{
   transform: translate(-50%, -200%);
+  opacity: 0;
 }
 // Header styles
 header {
@@ -503,145 +509,219 @@ header {
 }
 
 // Main content styles
-main {
-  .about{
-    height: 100vh;
-    min-height: 500px;
+.about{
+  height: 100vh;
+  min-height: 500px;
 
-    padding: 5px 5px 0;
+  padding: 5px 5px 0;
 
-    &__img img{
-      max-width: 100%;
-    }
-    &__content{
-      color: $black;
-      text-align: right;
-      font-size: 1rem;
-      h1{
-        @include font($fontHead,4em,400);
-        text-transform: uppercase;
-        margin-bottom: 0.5em;
-      }
-      p{
-        @include font($fontMain,1.25em,400);
-        line-height: 1.5em;
-        margin-bottom: 2em;
-      }
-    }
+  &__img img{
+    max-width: 100%;
   }
-  .choose{
-    min-height: 100vh;
-    width: 100%;
-
-    position: relative;
-    &::before{
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      right: 0;
-      z-index: -1;
-
-      display: block;
-      //TODO chooose image
-      background-image: url('https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fchoose.png?alt=media&token=1e21d11c-0a88-4bc7-855b-ae8866983a19');
-      background-origin: border-box;
-      background-position: right center;
-      background-repeat: no-repeat;
-      background-size: auto 100%;
+  &__content{
+    color: $black;
+    text-align: right;
+    font-size: 1rem;
+    h1{
+      @include font($fontHead,4em,400);
+      text-transform: uppercase;
+      margin-bottom: 0.5em;
     }
-    &__container{
-      height: 100%;
-      position: relative;
-    }
-    font-size: 1.25rem;
-    &__content{
-      height: 100%;
-      font-size: 1em;
-      padding: 7em 0;
-      h1{
-        @include font($fontHead,3.2em,400);
-        text-transform: uppercase;
-        padding-bottom: 0.5em;
-        z-index: 5;
-      }
-      p{
-        @include font($fontMain,1em,400);
-        line-height: 1.5em;
-        z-index: 5;
-      }
-    }
-
-    &__slider{
-      z-index: 1;
-      max-height: 300px;
-      position: relative;
-      right: 50%;
-      bottom: 0.25rem;
-    }
-  }
-  .quote{
-    height: 100vh;
-    min-height: 500px;
-    //TODO quote image
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fcontacts%2Fimage%202.png?alt=media&token=e4de43bb-62d3-4bf6-a06d-601dd6fbf630');
-    background-origin: border-box;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    color: $white;
-    &__block{
-      font-size: 1rem;
-      text-align: center;
-      p{
-        @include font($fontMain,2.5em,500);
-      }
-      footer{
-        @include font($fontMain,1.5em,300);
-        padding: 1.6em 0;
-      }
-    }
-    &__button{
-      margin: 0 auto;
-    }
-  }
-  .contact{
-    height: 100vh;
-    width: 100%;
-    min-height: 500px;
-    .contact__row-1{
-      height: 60%;
-      max-width: 100%;
-    }
-    .contact__row-2{
-      height: 40%;
-      max-width: 100%;
-    }
-    &__box{
-      height: 100%;
-
-      text-align: center;
-
-      &__article{
-        font-size: 1rem;
-        h1{
-          @include font($fontHead,4em,400);
-        }
-        p{
-          @include font($fontMain,1.5em,400)
-        }
-      }
-
-    }
-    &__map{
-      height: 100%;
-
-      width: 100%;
+    p{
+      @include font($fontMain,1.25em,400);
+      line-height: 1.5em;
+      margin-bottom: 2em;
     }
   }
 }
+.choose{
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    //TODO chooose image
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fchoose.png?alt=media&token=1e21d11c-0a88-4bc7-855b-ae8866983a19');
+    background-origin: border-box;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+  &__container{
+    height: 100%;
+    position: relative;
+  }
+  font-size: 1.25rem;
+  &__content{
+    height: 100%;
+    font-size: 1em;
+    padding: 7em 0;
+    h1{
+      @include font($fontHead,3.2em,400);
+      text-transform: uppercase;
+      padding-bottom: 0.5em;
+      z-index: 5;
+    }
+    p{
+      @include font($fontMain,1em,400);
+      line-height: 1.5em;
+      z-index: 5;
+    }
+  }
+
+  &__slider{
+    z-index: 1;
+    max-height: 300px;
+    position: relative;
+    right: 50%;
+    bottom: 0.25rem;
+  }
+}
+.quote{
+  height: 100vh;
+  min-height: 500px;
+  //TODO quote image
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fcontacts%2Fimage%202.png?alt=media&token=e4de43bb-62d3-4bf6-a06d-601dd6fbf630');
+  background-origin: border-box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: $white;
+  &__block{
+    font-size: 1rem;
+    text-align: center;
+    p{
+      @include font($fontMain,2.5em,500);
+    }
+    footer{
+      @include font($fontMain,1.5em,300);
+      padding: 1.6em 0;
+    }
+  }
+  &__button{
+    margin: 0 auto;
+  }
+}
+.contact{
+  height: 100vh;
+  width: 100%;
+  min-height: 500px;
+  .contact__row-1{
+    height: 60%;
+    max-width: 100%;
+  }
+  .contact__row-2{
+    height: 40%;
+    max-width: 100%;
+  }
+  &__box{
+    height: 100%;
+
+    text-align: center;
+
+    &__article{
+      font-size: 1rem;
+      h1{
+        @include font($fontHead,4em,400);
+      }
+      p{
+        @include font($fontMain,1.5em,400)
+      }
+    }
+
+  }
+  &__map{
+    height: 100%;
+
+    width: 100%;
+  }
+}
+
+.team{
+  min-height: 800px;
+  padding: 10px 0;
+
+  &__container{
+
+  }
+  &__title{
+    @include font($fontHead,4em,400);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  &__row{
+
+  }
+  &__col{
+    padding-top: 10px;
+    aspect-ratio: 1/1;
+
+    overflow: hidden;
+    figure{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      img{
+       height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;
+        overflow: hidden;
+
+
+      }
+      .layer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: table;
+
+        transform: translate(0,101%);
+        -webkit-transition: all .3s ease-in-out;
+
+        width: 100%;
+        height: 100%;
+        background-color: rgba(3, 3, 3, 0.62);
+
+        cursor: zoom-in;
+        span{
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+
+          text-transform: capitalize;
+          @include font($fontPrice,1rem,200);
+
+          color: #FBF0EC;
+          font-size: 2rem;
+        }
+      }
+    }
+    &:hover{
+      .layer{
+        transform: translate(0,0);
+      }
+    }
+
+  }
+
+}
+
+//footer
 .footer{
   background-color: $black;
   color: $white;

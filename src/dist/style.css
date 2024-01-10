@@ -908,8 +908,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-.breadcrumb-item.active {
-  color: #000000;
+.breadcrumb-item a {
+  color: grey !important;
+}
+.breadcrumb-item.active a {
+  color: #000000 !important;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   content: "/";
@@ -1212,6 +1215,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .close-form {
   transform: translate(-50%, -200%);
+  opacity: 0;
 }
 
 header {
@@ -1279,40 +1283,41 @@ header .header__background {
   z-index: -2;
 }
 
-main .about {
+.about {
   height: 100vh;
   min-height: 500px;
   padding: 5px 5px 0;
 }
-main .about__img img {
+.about__img img {
   max-width: 100%;
 }
-main .about__content {
+.about__content {
   color: #000000;
   text-align: right;
   font-size: 1rem;
 }
-main .about__content h1 {
+.about__content h1 {
   font-family: "Bodidota", sans-serif;
   font-size: 4em;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 0.5em;
 }
-main .about__content p {
+.about__content p {
   font-family: "Raleway", sans-serif;
   font-size: 1.25em;
   font-weight: 400;
   line-height: 1.5em;
   margin-bottom: 2em;
 }
-main .choose {
+
+.choose {
   min-height: 100vh;
   width: 100%;
   position: relative;
   font-size: 1.25rem;
 }
-main .choose::before {
+.choose::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1327,16 +1332,16 @@ main .choose::before {
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
-main .choose__container {
+.choose__container {
   height: 100%;
   position: relative;
 }
-main .choose__content {
+.choose__content {
   height: 100%;
   font-size: 1em;
   padding: 7em 0;
 }
-main .choose__content h1 {
+.choose__content h1 {
   font-family: "Bodidota", sans-serif;
   font-size: 3.2em;
   font-weight: 400;
@@ -1344,21 +1349,22 @@ main .choose__content h1 {
   padding-bottom: 0.5em;
   z-index: 5;
 }
-main .choose__content p {
+.choose__content p {
   font-family: "Raleway", sans-serif;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5em;
   z-index: 5;
 }
-main .choose__slider {
+.choose__slider {
   z-index: 1;
   max-height: 300px;
   position: relative;
   right: 50%;
   bottom: 0.25rem;
 }
-main .quote {
+
+.quote {
   height: 100vh;
   min-height: 500px;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/beauty-268c5.appspot.com/o/images%2Fcontacts%2Fimage%202.png?alt=media&token=e4de43bb-62d3-4bf6-a06d-601dd6fbf630");
@@ -1368,57 +1374,117 @@ main .quote {
   background-size: cover;
   color: #FFFFFF;
 }
-main .quote__block {
+.quote__block {
   font-size: 1rem;
   text-align: center;
 }
-main .quote__block p {
+.quote__block p {
   font-family: "Raleway", sans-serif;
   font-size: 2.5em;
   font-weight: 500;
 }
-main .quote__block footer {
+.quote__block footer {
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
   font-weight: 300;
   padding: 1.6em 0;
 }
-main .quote__button {
+.quote__button {
   margin: 0 auto;
 }
-main .contact {
+
+.contact {
   height: 100vh;
   width: 100%;
   min-height: 500px;
 }
-main .contact .contact__row-1 {
+.contact .contact__row-1 {
   height: 60%;
   max-width: 100%;
 }
-main .contact .contact__row-2 {
+.contact .contact__row-2 {
   height: 40%;
   max-width: 100%;
 }
-main .contact__box {
+.contact__box {
   height: 100%;
   text-align: center;
 }
-main .contact__box__article {
+.contact__box__article {
   font-size: 1rem;
 }
-main .contact__box__article h1 {
+.contact__box__article h1 {
   font-family: "Bodidota", sans-serif;
   font-size: 4em;
   font-weight: 400;
 }
-main .contact__box__article p {
+.contact__box__article p {
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
   font-weight: 400;
 }
-main .contact__map {
+.contact__map {
   height: 100%;
   width: 100%;
+}
+
+.team {
+  min-height: 800px;
+  padding: 10px 0;
+}
+.team__title {
+  font-family: "Bodidota", sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.team__col {
+  padding-top: 10px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.team__col figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.team__col figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+  overflow: hidden;
+}
+.team__col figure .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: table;
+  transform: translate(0, 101%);
+  -webkit-transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 3, 3, 0.62);
+  cursor: zoom-in;
+}
+.team__col figure .layer span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #FBF0EC;
+  font-size: 2rem;
+}
+.team__col:hover .layer {
+  transform: translate(0, 0);
 }
 
 .footer {
@@ -1512,6 +1578,9 @@ main .contact__map {
   }
   .logo img {
     width: 125px;
+  }
+  .header__background {
+    object-position: center;
   }
   main .choose::before {
     background-position: center center;

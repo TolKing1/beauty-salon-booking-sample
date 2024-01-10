@@ -1,6 +1,8 @@
 import { getStorage,ref,listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js";
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 import {getAuth,onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut}  from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
+import {getFirestore} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
 import {isValidEmail, isValidPassword} from "./validate.js";
 
 const firebaseConfig = {
@@ -16,6 +18,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app)
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 export const storageRef = ref(storage, '/images/slider');
 
 
@@ -159,11 +162,42 @@ export function toggleBurger(){
         menu.classList.toggle("active")
     })
 }
+const Menu = {
+
+    el: {
+        ham: $('.menu'),
+        menuTop: $('.menu-top'),
+        menuMiddle: $('.menu-middle'),
+        menuBottom: $('.menu-bottom')
+    },
+
+    init: function () {
+        Menu.bindUIactions();
+    },
+
+    bindUIactions: function () {
+        Menu.el.ham
+            .on(
+                'click',
+                function (event) {
+                    Menu.activateMenu(event);
+                    event.preventDefault();
+                }
+            );
+    },
+
+    activateMenu: function () {
+        Menu.el.menuTop.toggleClass('menu-top-click');
+        Menu.el.menuMiddle.toggleClass('menu-middle-click');
+        Menu.el.menuBottom.toggleClass('menu-bottom-click');
+    }
+};
 //
-export async function form() {
+export function form() {
     signUp()
     signIn()
     closeBtn()
     exitAcc()
-    await youAreLogged().then(() => console.log(""))
+    youAreLogged().then(() => console.log(""))
+    Menu.init();
 }

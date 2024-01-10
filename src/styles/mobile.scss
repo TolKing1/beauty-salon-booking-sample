@@ -71,8 +71,9 @@
   .logo img{
     width: 125px;
   }
-
-
+  .header__background{
+    object-position: center;
+  }
   main {
     .choose {
       &::before {
