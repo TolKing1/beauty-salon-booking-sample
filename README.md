@@ -1,23 +1,49 @@
-# Fundamentals of Web Development Final Project
+# Charlotte Hair Salon Website
 
-## Task Requirements
+## Overview
 
-1. Please, place all your `SCSS` styles to `src/styles` folder.
-2. The `package.json` file is already created, please don't delete NPM scripts which are already there. This file should look like this when you initiate the project:
+This repository contains the source code for the Charlotte Hair Salon website, which serves as an online platform for showcasing the salon's services, introducing the team, and presenting pricing information. The website is designed to dynamically fetch and display data using Firebase and Firestore.
 
-   ```json
-   {
-      "scripts" {
-         "postinstall": "cd ./test && npm i || true",
-         "test": "cd ./tests && npm run tes  t",
-         "build": "echo \"Dummy build script for Autocode\""
-      }
+## Pages
 
-   }
-   ```
+1. **Home (index.html)**
+   - The homepage introduces the salon's expertise with a background video.
+   - Visitors can easily contact the salon through a "Call Now" button.
 
-3. Your main HTML page should be named `index.html` and be placed `src/index.html`.
-4. Root files for regular and mobile styles have to have names `style.scss` and `mobile.scss` and be placed inside `src/styles` folder. These names are used for automatic checks.
-5. All the result CSS file have to be in `dist` folder.
-   - result styles should be in `src/dist/style.css`
-   - result minified styles should be in `src/dist/style.min.css`
+2. **Team (team.html)**
+   - This page introduces the salon team.
+   - Users can book appointments by clicking on individual hairdressers.
+
+3. **Prices (price.html)**
+   - The prices page outlines various salon services.
+   - Users can use the search functionality to find specific services.
+
+4. **About Us (about.html)**
+   - Provides information about the salon, its staff, and the salon's commitment to customer satisfaction.
+
+5. **Contact (contact.html)**
+   - Displays contact information, including phone number and email.
+   - Features a map with the salon's location.
+
+## Firebase Integration
+
+- The website dynamically fetches data from Firebase and Firestore.
+- The logo, images, and videos are stored on Firebase Storage.
+- Contact information and team details are retrieved from Firestore.
+
+## Forms and Authentication
+
+- The website includes a sign-up and login form, accessed by clicking the account icon in the navigation bar.
+- Firebase Authentication handles user sign-up and login.
+
+## Dependencies
+
+- [jQuery](https://jquery.com/) for DOM manipulation.
+- [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/) for a responsive image slider.
+
+## Usage
+
+1. Clone the repository.
+2. Open the HTML files in a web browser to view the website.
+
+Feel free to explore, contribute, or customize the code according to your needs. For any issues or suggestions, please create an [issue](link-to-issues) in the repository.

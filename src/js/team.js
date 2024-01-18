@@ -81,29 +81,32 @@ async function getEvents(memberId, user) {
         querySnapshot.forEach((doc) => {
             const data = doc.data();
             if (memberId === data.member) {
-                const timeStart = new Date(data.start);
-                const timeEnd = new Date(data.end);
+                try{
+                    const timeStart = new Date(data.start);
+                    const timeEnd = new Date(data.end);
+                    const start = DayPilot.Date(timeStart,true);
+                    const end = DayPilot.Date(timeEnd,true);
 
-                const start = DayPilot.Date(timeStart,true);
-                const end = DayPilot.Date(timeEnd,true);
-
-                let text;
-                let color;
-                if (data.user === user) {
-                    text ="Your booking:\n\n"+ data.text;
-                    color = '#c6ffb9'
-                } else {
-                    text = "BOOKED"
-                    color = '#ffb2b2'
+                    let text;
+                    let color;
+                    if (data.user === user) {
+                        text ="Your booking:\n\n"+ data.text;
+                        color = '#c6ffb9'
+                    } else {
+                        text = "BOOKED"
+                        color = '#ffb2b2'
+                    }
+                    events.push({id: doc.id, start: start, end: end, text: text,backColor:color})
+                }catch (e) {
+                    console.log("Error in parsing date:"+e)
+                    return;
                 }
-                events.push({id: doc.id, start: start, end: end, text: text,backColor:color})
             }
 
         });
         return events;
     } catch (error) {
         console.error('Error getting team events: ', error);
-
     }
     return events;
 }
